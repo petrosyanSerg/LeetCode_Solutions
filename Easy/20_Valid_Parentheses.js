@@ -26,6 +26,10 @@ Example 4:
  */
 
 function isValid(str) {
+  if (str.length % 2 === 1) return false;
+  if (str[0] === "]" || str[0] === ")" || str[0] === "}") return false;
+  if (str[str.length - 1] === "[" || str[str.length - 1] === "(" || str[str.length - 1] === "{") return false;
+
   const stack = [];
   const mapping = {
     ')': '(',
